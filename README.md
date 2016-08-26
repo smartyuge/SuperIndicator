@@ -8,8 +8,14 @@ a superindicatorlibray for viewpager, banner
 - 支持无限循环，可以自己设定点的样试
 - 图片支持设置圆角边
 
-
+效果图
+------------
 ![SuperIndicator](/SuperIndicator.gif)
+
+
+爱奇艺视频，腾讯视频，搜狐视频首页推荐位轮播图
+------------
+![SuperIndicator](/iqiyi.png) ![SuperIndicator](/sohu.png) ![SuperIndicator](/tencent.png)
 
 Gradle
 ------------
