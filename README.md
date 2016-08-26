@@ -1,8 +1,12 @@
-# SuperIndicator
-
 SuperIndicator
 ===============
-a superindicatorlibray for viewpager
+a superindicatorlibray for viewpager, banner
+
+- 仿爱奇艺视频，腾讯视频，搜狐视频首页推荐位轮播图
+- 专业轮播图库，没有之一
+- 也可以应用于广告位banner
+- 支持无限循环，可以自己设定点的样试
+- 图片支持设置圆角边
 
 
 ![SuperIndicator](/SuperIndicator.gif)
@@ -11,7 +15,7 @@ Gradle
 ------------
 ```groovy
 dependencies {
-    compile 'com.hejunlin.superindicatorlibray:1.0.0'
+    compile 'com.hejunlin.superindicatorlibray:1.0.2'
 }
 ```
 
@@ -41,7 +45,7 @@ Usage
     indicator.setViewPager(viewpager);
 ```
 
-##欢迎关注我的个人公众号，android 技术干货，问题深度总结，FrameWork源码解析，插件化研究，最新开源项目推荐
+####欢迎关注我的个人公众号，android 技术干货，问题深度总结，FrameWork源码解析，插件化研究，最新开源项目推荐
 ![这里写图片描述](https://github.com/hejunlin2013/RedPackage/blob/master/image/qrcode.jpg)
 
 License
