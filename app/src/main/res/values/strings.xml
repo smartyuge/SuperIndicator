@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SuperIndicator</string>
+
+    <string name="a_name">挑战者联盟</string>
+    <string name="b_name">老九门，再探古墓</string>
+    <string name="c_name">红色通道，刘烨归来</string>
+    <string name="d_name">神犬小七第二季</string>
+    <string name="e_name">灭罪师</string>
+</resources>
