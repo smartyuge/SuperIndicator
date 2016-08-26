@@ -21,6 +21,7 @@ a superindicatorlibray for viewpager, banner
 
 Gradle
 ------------
+<font color ="#FF6347">如果引用不到包，可以把library拷贝你的工程中，在setting.gradle中include下，也是一样。 </font>
 ```groovy
 dependencies {
     compile 'com.hejunlin.superindicatorlibray:1.0.2'
@@ -53,7 +54,7 @@ Usage
     indicator.setViewPager(viewpager);
 ```
 
-如何引用不到包，可以暂时把library拷贝你的工程中，也是一样。
+
 
 ####欢迎关注我的个人公众号，android 技术干货，问题深度总结，FrameWork源码解析，插件化研究，最新开源项目推荐
 ![这里写图片描述](https://github.com/hejunlin2013/RedPackage/blob/master/image/qrcode.jpg)
