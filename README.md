@@ -24,7 +24,7 @@ Gradle
 <font color ="#FF6347">如果引用不到包，可以把library拷贝你的工程中，在setting.gradle中include下，也是一样。 </font>
 ```groovy
 dependencies {
-    compile 'com.hejunlin.superindicatorlibray:1.0.2'
+    compile 'com.hejunlin:superindicatorlibray:1.0.2'
 }
 ```
 

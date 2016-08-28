@@ -1,7 +1,7 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-group = "com.marsXTU"
+group = "com.hejunlin"
 
 install {
     repositories.mavenInstaller {

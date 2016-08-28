@@ -1,7 +1,7 @@
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-group = "com.marsXTU"
+group = "com.hejunlin"
 
 configurations.archives {
     extendsFrom configurations.default
