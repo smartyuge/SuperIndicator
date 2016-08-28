@@ -18,7 +18,12 @@ public class MainActivity extends AppCompatActivity {
         LoopViewPager viewpager = (LoopViewPager) findViewById(R.id.viewpager);
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         viewpager.setAdapter(new PicAdapter(MainActivity.this));
+        viewpager.setLooperPic(true);
         indicator.setViewPager(viewpager);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

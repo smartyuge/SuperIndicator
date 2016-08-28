@@ -193,24 +193,17 @@ public class CircleIndicator extends LinearLayout {
             mInternalPageChangeListener.onPageSelected(mViewpager.getCurrentItem());
         }
     }
-    Paint paint;
-    Canvas canvas;
+
     private final OnPageChangeListener mInternalPageChangeListener = new OnPageChangeListener() {
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             Log.e(TAG,"<< onPageScrolled position :" + position + ", positionOffset: " + positionOffset + ", positionOffsetPixels: " + positionOffsetPixels);
-                paint = new Paint(); 
-                canvas = new Canvas();
-                paint.setColor(Color.YELLOW);
-                paint.setStrokeJoin(Paint.Join.ROUND);
-                paint.setStrokeCap(Paint.Cap.ROUND);
-                paint.setStrokeWidth(3);
-                Log.e(TAG,"<< onPageScrolled paint = null");
-                canvas.drawCircle(100, 100, 50, paint);
+
         }
 
-        @Override public void onPageSelected(int position) {
+        @Override
+        public void onPageSelected(int position) {
             Log.e(TAG,"<< onPageSelected position :" + position );
             if (mViewpager.getAdapter() == null || mViewpager.getAdapter().getCount() <= 0) {
                 return;
@@ -242,7 +235,8 @@ public class CircleIndicator extends LinearLayout {
             mLastPosition = position;
         }
 
-        @Override public void onPageScrollStateChanged(int state) {
+        @Override
+        public void onPageScrollStateChanged(int state) {
             Log.e(TAG,"<< onPageSelected position :" + state );
         }
     };

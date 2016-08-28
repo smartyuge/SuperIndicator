@@ -47,7 +47,8 @@ public class LoopPagerAdapterWrapper extends PagerAdapter {
         this.mAdapter = adapter;
     }
 
-    @Override public void notifyDataSetChanged() {
+    @Override
+    public void notifyDataSetChanged() {
         mToDestroy = new SparseArray<>();
         super.notifyDataSetChanged();
     }
@@ -77,7 +78,8 @@ public class LoopPagerAdapterWrapper extends PagerAdapter {
         return getRealFirstPosition() + getRealCount() - 1;
     }
 
-    @Override public int getCount() {
+    @Override
+    public int getCount() {
         int count = getRealCount();
         return mBoundaryLooping ? count + 2 : count;
     }
@@ -90,7 +92,8 @@ public class LoopPagerAdapterWrapper extends PagerAdapter {
         return mAdapter;
     }
 
-    @Override public Object instantiateItem(ViewGroup container, int position) {
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
         int realPosition = (mAdapter instanceof FragmentPagerAdapter
                 || mAdapter instanceof FragmentStatePagerAdapter) ? position
                 : toRealPosition(position);
@@ -105,7 +108,8 @@ public class LoopPagerAdapterWrapper extends PagerAdapter {
         return mAdapter.instantiateItem(container, realPosition);
     }
 
-    @Override public void destroyItem(ViewGroup container, int position, Object object) {
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
         int realFirst = getRealFirstPosition();
         int realLast = getRealLastPosition();
         int realPosition = (mAdapter instanceof FragmentPagerAdapter
@@ -122,24 +126,28 @@ public class LoopPagerAdapterWrapper extends PagerAdapter {
 	/*
      * Delegate rest of methods directly to the inner adapter.
 	 */
-
-    @Override public void finishUpdate(ViewGroup container) {
+    @Override
+    public void finishUpdate(ViewGroup container) {
         mAdapter.finishUpdate(container);
     }
 
-    @Override public boolean isViewFromObject(View view, Object object) {
+    @Override
+    public boolean isViewFromObject(View view, Object object) {
         return mAdapter.isViewFromObject(view, object);
     }
 
-    @Override public void restoreState(Parcelable bundle, ClassLoader classLoader) {
+    @Override
+    public void restoreState(Parcelable bundle, ClassLoader classLoader) {
         mAdapter.restoreState(bundle, classLoader);
     }
 
-    @Override public Parcelable saveState() {
+    @Override
+    public Parcelable saveState() {
         return mAdapter.saveState();
     }
 
-    @Override public void startUpdate(ViewGroup container) {
+    @Override
+    public void startUpdate(ViewGroup container) {
         mAdapter.startUpdate(container);
     }
 

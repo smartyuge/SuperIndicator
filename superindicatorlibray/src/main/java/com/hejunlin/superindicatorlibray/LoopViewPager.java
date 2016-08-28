@@ -17,9 +17,12 @@
 package com.hejunlin.superindicatorlibray;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import com.hejunlin.superindicatorlibray.LoopPagerAdapterWrapper;
 
@@ -27,13 +30,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoopViewPager extends ViewPager {
+
+    private static final String TAG = LoopViewPager.class.getSimpleName();
     private static final boolean DEFAULT_BOUNDARY_CASHING = false;
     private static final boolean DEFAULT_BOUNDARY_LOOPING = true;
+    private static final int DELAY_LONG_DUTATION = 5000;
+    private static final int MSG_LOOP_PICTURE = 1001;
 
     private LoopPagerAdapterWrapper mAdapter;
     private boolean mBoundaryCaching = DEFAULT_BOUNDARY_CASHING;
     private boolean mBoundaryLooping = DEFAULT_BOUNDARY_LOOPING;
     private List<OnPageChangeListener> mOnPageChangeListeners;
+    private boolean mIsLoopPicture = false;
+
+    /**
+     * when set looperpic has true, will handle this action
+     * @return Handler
+     */
+    private Handler mHandler = new Handler(Looper.getMainLooper()) {
+        public void handleMessage(android.os.Message msg) {
+            Log.e(TAG, "mHandler.handleMessage(" + msg + ")" +
+                    " mIsLoopPicture=" + mIsLoopPicture + ", isSelected=" + isSelected());
+            if (mIsLoopPicture && mAdapter.getCount() > 0) {
+                int position = getCurrentItem() + 1;
+                setCurrentItem(position);
+            }
+        }
+    };
 
     /**
      * helper function which may be used when implementing FragmentPagerAdapter
@@ -61,6 +84,18 @@ public class LoopViewPager extends ViewPager {
         }
     }
 
+    public void setLooperPic(boolean looperPic) {
+        Log.e(TAG, ">> setLooperPic(" + looperPic + ")");
+        mIsLoopPicture = looperPic;
+        loopPictureIfNeed();
+    }
+
+    public void loopPictureIfNeed() {
+        Log.e(TAG, ">> loopPictureIfNeed(" + mIsLoopPicture + ")");
+        mHandler.removeMessages(MSG_LOOP_PICTURE);
+        mHandler.sendEmptyMessageDelayed(MSG_LOOP_PICTURE, DELAY_LONG_DUTATION);
+    }
+
     public void setBoundaryLooping(boolean flag) {
         mBoundaryLooping = flag;
         if (mAdapter != null) {
@@ -68,7 +103,9 @@ public class LoopViewPager extends ViewPager {
         }
     }
 
-    @Override public void setAdapter(PagerAdapter adapter) {
+    @Override
+    public void setAdapter(PagerAdapter adapter) {
+        Log.e(TAG, ">> setAdapter(" + adapter + ")");
         mAdapter = new LoopPagerAdapterWrapper(adapter);
         mAdapter.setBoundaryCaching(mBoundaryCaching);
         mAdapter.setBoundaryLooping(mBoundaryLooping);
@@ -76,11 +113,13 @@ public class LoopViewPager extends ViewPager {
         setCurrentItem(0, false);
     }
 
-    @Override public PagerAdapter getAdapter() {
+    @Override
+    public PagerAdapter getAdapter() {
         return mAdapter != null ? mAdapter.getRealAdapter() : mAdapter;
     }
 
-    @Override public int getCurrentItem() {
+    @Override
+    public int getCurrentItem() {
         return mAdapter != null ? mAdapter.toRealPosition(super.getCurrentItem()) : 0;
     }
 
@@ -89,30 +128,35 @@ public class LoopViewPager extends ViewPager {
         super.setCurrentItem(realItem, smoothScroll);
     }
 
-    @Override public void setCurrentItem(int item) {
+    @Override
+    public void setCurrentItem(int item) {
         if (getCurrentItem() != item) {
             setCurrentItem(item, true);
         }
     }
 
-    @Override public void setOnPageChangeListener(OnPageChangeListener listener) {
+    @Override
+    public void setOnPageChangeListener(OnPageChangeListener listener) {
         addOnPageChangeListener(listener);
     }
 
-    @Override public void addOnPageChangeListener(OnPageChangeListener listener) {
+    @Override
+    public void addOnPageChangeListener(OnPageChangeListener listener) {
         if (mOnPageChangeListeners == null) {
             mOnPageChangeListeners = new ArrayList<>();
         }
         mOnPageChangeListeners.add(listener);
     }
 
-    @Override public void removeOnPageChangeListener(OnPageChangeListener listener) {
+    @Override
+    public void removeOnPageChangeListener(OnPageChangeListener listener) {
         if (mOnPageChangeListeners != null) {
             mOnPageChangeListeners.remove(listener);
         }
     }
 
-    @Override public void clearOnPageChangeListeners() {
+    @Override
+    public void clearOnPageChangeListeners() {
         if (mOnPageChangeListeners != null) {
             mOnPageChangeListeners.clear();
         }
@@ -139,12 +183,12 @@ public class LoopViewPager extends ViewPager {
         private float mPreviousOffset = -1;
         private float mPreviousPosition = -1;
 
-        @Override public void onPageSelected(int position) {
-
+        @Override
+        public void onPageSelected(int position) {
+            Log.e(TAG, ">> onPageSelected(" + position + ")");
             int realPosition = mAdapter.toRealPosition(position);
             if (mPreviousPosition != realPosition) {
                 mPreviousPosition = realPosition;
-
                 if (mOnPageChangeListeners != null) {
                     for (int i = 0; i < mOnPageChangeListeners.size(); i++) {
                         OnPageChangeListener listener = mOnPageChangeListeners.get(i);
@@ -154,10 +198,12 @@ public class LoopViewPager extends ViewPager {
                     }
                 }
             }
+            loopPictureIfNeed();
         }
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            Log.e(TAG, ">> onPageScrolled(" + position + ")");
             int realPosition = position;
             if (mAdapter != null) {
                 realPosition = mAdapter.toRealPosition(position);
@@ -189,7 +235,8 @@ public class LoopViewPager extends ViewPager {
             }
         }
 
-        @Override public void onPageScrollStateChanged(int state) {
+        @Override
+        public void onPageScrollStateChanged(int state) {
             if (mAdapter != null) {
                 int position = LoopViewPager.super.getCurrentItem();
                 int realPosition = mAdapter.toRealPosition(position);
