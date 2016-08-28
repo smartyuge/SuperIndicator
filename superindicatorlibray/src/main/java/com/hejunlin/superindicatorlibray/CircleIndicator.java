@@ -200,7 +200,7 @@ public class CircleIndicator extends LinearLayout {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             Log.e(TAG,"<< onPageScrolled position :" + position + ", positionOffset: " + positionOffset + ", positionOffsetPixels: " + positionOffsetPixels);
-                paint = new Paint(); //设置一个笔刷大小是3的黄色的画笔
+                paint = new Paint(); 
                 canvas = new Canvas();
                 paint.setColor(Color.YELLOW);
                 paint.setStrokeJoin(Paint.Join.ROUND);
