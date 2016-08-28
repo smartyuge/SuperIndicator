@@ -9,7 +9,7 @@ a superindicatorlibray for viewpager, banner
 - 支持无限循环（4->5，5->1），可以自己设定点的样试
 - 图片支持设置圆角边
 - 只需要几行代码就能写了banner图
-- 新增自动轮播，无须手触摸控制，如果设置LooperViewPager.setLoopPic(true) by 2016/8/28
+- 新增自动轮播，无须手触摸控制，如果设置LooperViewPager.setLoopPic(true) ---- 2016/8/28
 
 
 效果图
