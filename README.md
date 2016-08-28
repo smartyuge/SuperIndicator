@@ -2,12 +2,14 @@ SuperIndicator
 ===============
 a superindicatorlibray for viewpager, banner
 
+## Features:
 - 仿爱奇艺视频，腾讯视频，搜狐视频首页推荐位轮播图
 - 专业轮播图库，没有之一
 - 也可以应用于广告位banner
 - 支持无限循环（4->5，5->1），可以自己设定点的样试
 - 图片支持设置圆角边
 - 只需要几行代码就能写了banner图
+- 新增自动轮播，无须手触摸控制，如果设置LooperViewPager.setLoopPic(true) by 2016/8/28
 
 
 效果图
@@ -51,6 +53,7 @@ Usage
     ViewPager viewpager = (ViewPager) view.findViewById(R.id.viewpager);
     CircleIndicator indicator = (CircleIndicator) view.findViewById(R.id.indicator);
     viewpager.setAdapter(mPageAdapter);
+    viewpager.setLooperPic(true);//是否设置自动轮播
     indicator.setViewPager(viewpager);
 ```
 
