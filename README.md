@@ -43,22 +43,23 @@ dependencies {
 Usage
 --------
 ```xml
-    <com.hejunlin.superindicatorlibray.CircleIndicator
-        android:id="@id/indicator"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginRight="@dimen/dimen_14dp"
-        android:gravity="center"
-        android:orientation="horizontal" />
+<com.hejunlin.superindicatorlibray.CircleIndicator
+    android:id="@id/indicator"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_gravity="right|center_vertical"
+    android:layout_marginRight="@dimen/dimen_14dp"
+    android:gravity="center"
+    android:orientation="horizontal"/>
 ```
 ```xml
 <com.hejunlin.superindicatorlibray.LoopViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/dimen_25dp"
-            android:layout_height="@dimen/dimen_400dp"/>
+    android:id="@+id/viewpager"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/dimen_25dp"
+    android:layout_height="@dimen/dimen_400dp"/>
 ```
+Java代码中
 ```java
     ViewPager viewpager = (ViewPager) view.findViewById(R.id.viewpager);
     CircleIndicator indicator = (CircleIndicator) view.findViewById(R.id.indicator);
