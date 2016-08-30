@@ -21,13 +21,23 @@ a superindicatorlibray for viewpager, banner
 ------------
 ![SuperIndicator](/iqiyi.png) ![SuperIndicator](/sohu.png) ![SuperIndicator](/tencent.png)
 
-Gradle
+## Import
 ------------
-<font color ="#FF6347">如果引用不到包，可以把library拷贝你的工程中，在setting.gradle中include下，也是一样。 </font>
+
+####Gradle
 ```groovy
 dependencies {
-    compile 'com.hejunlin:superindicatorlibray:1.0.2'
+   compile 'com.hejunlin.superindicatorlibray:superindicatorlibray:1.0.2'
 }
+```
+####Maven
+```groovy
+<dependency>
+  <groupId>com.hejunlin.superindicatorlibray</groupId>
+  <artifactId>superindicatorlibray</artifactId>
+  <version>1.0.2</version>
+  <type>pom</type>
+</dependency>
 ```
 
 Usage
