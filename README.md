@@ -15,12 +15,16 @@ a superindicatorlibray for viewpager, banner
 
 效果图
 ------------
-![SuperIndicator](/SuperIndicator.gif)
+![SuperIndicator](/image/SuperIndicator.gif)
+
+1.3.0 版本效果,fix issue:在scrollview左右滑动和上下冲突问题
+------------
+![SuperIndicator](/image/device-2016-09-05-162915.gif)
 
 
 爱奇艺视频，腾讯视频，搜狐视频首页推荐位轮播图
 ------------
-![SuperIndicator](/iqiyi.png) ![SuperIndicator](/sohu.png) ![SuperIndicator](/tencent.png)
+![SuperIndicator](/image/iqiyi.png) ![SuperIndicator](/image/sohu.png) ![SuperIndicator](/image/tencent.png)
 
 ## Import
 ------------
