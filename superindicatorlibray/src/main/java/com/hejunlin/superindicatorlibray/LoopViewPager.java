@@ -21,10 +21,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.MotionEvent;
+
 import android.util.AttributeSet;
 import android.util.Log;
-
-import com.hejunlin.superindicatorlibray.LoopPagerAdapterWrapper;
+import android.view.KeyEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ public class LoopViewPager extends ViewPager {
     private boolean mBoundaryLooping = DEFAULT_BOUNDARY_LOOPING;
     private List<OnPageChangeListener> mOnPageChangeListeners;
     private boolean mIsLoopPicture = false;
+    private boolean mIsScrollable = true;
 
     /**
      * when set looperpic has true, will handle this action
@@ -256,4 +258,60 @@ public class LoopViewPager extends ViewPager {
             }
         }
     };
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+                getParent().requestDisallowInterceptTouchEvent(true);
+                break;
+            default:
+                getParent().requestDisallowInterceptTouchEvent(false);
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (mDispatchListener != null) {
+            mDispatchListener.onDispatchKeyEvent(event);
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
+    private OnDispatchTouchEventListener mDispatchListener;
+    public void setOnDispatchTouchEventListener(OnDispatchTouchEventListener listener) {
+        mDispatchListener = listener;
+    }
+    public static interface OnDispatchTouchEventListener {
+        void onDispatchKeyEvent(MotionEvent event);
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        return super.dispatchKeyEvent(event);
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return super.onKeyDown(keyCode, event);
+    }
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        return super.onKeyUp(keyCode, event);
+    }
+
+    public void setScrollable(boolean Scrollable) {
+        mIsScrollable = Scrollable;
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        if (mIsScrollable == false) {
+            return false;
+        } else {
+            return super.onInterceptTouchEvent(event);
+        }
+    }
 }
