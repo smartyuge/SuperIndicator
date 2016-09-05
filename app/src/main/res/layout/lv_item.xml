@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_80dp"
+        android:text="长沙老九门"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="@dimen/dimen_40sp"/>
+
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:fillViewport="true">
+
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp">
+
+        <ListView
+            android:id="@+id/lv_data"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dimen_440dp"
+            android:layout_height="@dimen/dimen_1440dp"
+            android:layout_gravity="bottom"></ListView>
+
+        <com.hejunlin.superindicatorlibray.LoopViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dimen_25dp"
+            android:layout_height="@dimen/dimen_400dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40dp"
+            android:layout_marginTop="@dimen/dimen_400dp"
+            android:background="@drawable/looper_bottom_bg">
+
+            <com.hejunlin.superindicatorlibray.CircleIndicator
+                android:id="@id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/dimen_14dp"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+        </FrameLayout>
+
+
+
+    </FrameLayout>
+
+
+</ScrollView>

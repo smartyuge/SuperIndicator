@@ -9,15 +9,15 @@ import com.hejunlin.superindicatorlibray.CircleIndicator;
 /**
  * Created by hejunlin on 2016/8/25.
  */
-public class MainActivity extends AppCompatActivity {
+public class TestCommonViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_common);
         LoopViewPager viewpager = (LoopViewPager) findViewById(R.id.viewpager);
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
-        viewpager.setAdapter(new PicAdapter(MainActivity.this));
+        viewpager.setAdapter(new PicAdapter(TestCommonViewActivity.this));
         viewpager.setLooperPic(true);
         indicator.setViewPager(viewpager);
     }

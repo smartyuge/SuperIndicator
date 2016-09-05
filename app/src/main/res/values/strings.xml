@@ -6,4 +6,7 @@
     <string name="c_name">红色通道，刘烨归来</string>
     <string name="d_name">神犬小七第二季</string>
     <string name="e_name">灭罪师</string>
+
+    <string name="common_text">测试普通View轮播</string>
+    <string name="scroll_text">测试ScrollView轮播</string>
 </resources>
