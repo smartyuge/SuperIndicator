@@ -44,9 +44,11 @@ dependencies {
   <type>pom</type>
 </dependency>
 ```
+
 ####Version
-1.0.2 已发release版本 date: 2016-8-31
-1.0.3 修复在scrollview上下滑动和左右滑动冲突问题,已发release版本，Gradle,Maven均可用 date: 2016-9-5
+
+- 1.0.2 已发release版本 date: 2016-8-31
+- 1.0.3 修复在scrollview上下滑动和左右滑动冲突问题,已发release版本，Gradle,Maven均可用 date: 2016-9-5
 
 
 Usage
