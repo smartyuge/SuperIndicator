@@ -32,7 +32,7 @@ a superindicatorlibray for viewpager, banner
 ####Gradle
 ```groovy
 dependencies {
-   compile 'com.hejunlin.superindicatorlibray:superindicatorlibray:1.0.2'
+   compile 'com.hejunlin.superindicatorlibray:superindicatorlibray:1.0.3'
 }
 ```
 ####Maven
@@ -40,10 +40,14 @@ dependencies {
 <dependency>
   <groupId>com.hejunlin.superindicatorlibray</groupId>
   <artifactId>superindicatorlibray</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <type>pom</type>
 </dependency>
 ```
+####Version
+1.0.2 已发release版本 date: 2016-8-31
+1.0.3 修复在scrollview上下滑动和左右滑动冲突问题,已发release版本，Gradle,Maven均可用 date: 2016-9-5
+
 
 Usage
 --------
