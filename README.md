@@ -10,6 +10,7 @@ a superindicatorlibray for viewpager, banner
 - 图片支持设置圆角边
 - 只需要几行代码就能写了banner图
 - 新增自动轮播，无须手触摸控制，如果设置LooperViewPager.setLoopPic(true) ---- 2016/8/28
+- 修复在scrollview左右滑动和上下冲突问题 ---- 2016/9/5
 
 
 效果图
