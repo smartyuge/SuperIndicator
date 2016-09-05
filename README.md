@@ -17,7 +17,7 @@ a superindicatorlibray for viewpager, banner
 ------------
 ![SuperIndicator](/image/SuperIndicator.gif)
 
-1.3.0 版本效果,fix issue:在scrollview左右滑动和上下冲突问题
+1.0.3 版本效果,fix issue:在scrollview左右滑动和上下冲突问题
 ------------
 ![SuperIndicator](/image/device-2016-09-05-162915.gif)
 
