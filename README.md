@@ -70,7 +70,7 @@ Usage
     android:layout_marginTop="@dimen/dimen_25dp"
     android:layout_height="@dimen/dimen_400dp"/>
 ```
-Java代码中
+Java代码中(Eclipse可用提交的jar包)
 ```java
     ViewPager viewpager = (ViewPager) view.findViewById(R.id.viewpager);
     CircleIndicator indicator = (CircleIndicator) view.findViewById(R.id.indicator);
