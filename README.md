@@ -29,13 +29,13 @@ a superindicatorlibray for viewpager, banner
 ## Import
 ------------
 
-####Gradle
+#### Gradle
 ```groovy
 dependencies {
    compile 'com.hejunlin.superindicatorlibray:superindicatorlibray:1.0.3'
 }
 ```
-####Maven
+#### Maven
 ```groovy
 <dependency>
   <groupId>com.hejunlin.superindicatorlibray</groupId>
@@ -45,13 +45,13 @@ dependencies {
 </dependency>
 ```
 
-####Version
+#### Version
 
 - 1.0.2 已发release版本 date: 2016-8-31
 - 1.0.3 修复在scrollview上下滑动和左右滑动冲突问题,已发release版本，Gradle,Maven均可用 date: 2016-9-5
 
 
-Usage
+#### Usage
 --------
 ```xml
 <com.hejunlin.superindicatorlibray.CircleIndicator
@@ -81,7 +81,7 @@ Java代码中(Eclipse可用提交的jar包)
 
 
 
-####欢迎关注我的个人公众号，android 技术干货，问题深度总结，FrameWork源码解析，插件化研究，最新开源项目推荐
+#### 欢迎关注我的个人公众号，android 技术干货，问题深度总结，FrameWork源码解析，插件化研究，最新开源项目推荐
 ![这里写图片描述](https://github.com/hejunlin2013/RedPackage/blob/master/image/qrcode.jpg)
 
 License
